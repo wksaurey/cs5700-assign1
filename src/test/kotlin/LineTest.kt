@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 class LineTest{
 
-    val points = arrayOf(
+    val points = listOf(
         Point(0.0, 0.0),
         Point(1.0, 2.0),
         Point(-3.0, -4.0),
