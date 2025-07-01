@@ -22,7 +22,7 @@ class CircleTest{
         val expectedAreas = listOf<Double>(28.274, 7.069, .7854, .031)
         for ((radius, expectedArea) in radiusValues.zip(expectedAreas)) {
             val circle = Circle(point, radius)
-            assertEquals(expectedArea, circle.getArea())
+            assertEquals(expectedArea, circle.getArea(), .001)
         }
 
     }

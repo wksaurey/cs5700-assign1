@@ -1,4 +1,4 @@
-class Rectangle(
+open class Rectangle(
     point: Point,
     width: Double,
     height: Double
