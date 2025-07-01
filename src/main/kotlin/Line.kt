@@ -9,7 +9,7 @@ class Line (
         validateLineLength(point1, point2)
     }
 
-    fun validateLineLength(point1: Point, point2: Point) {
+    private fun validateLineLength(point1: Point, point2: Point) {
         if (getLength(point1, point2) == 0.0) {
             throw IllegalArgumentException()
         }
@@ -21,7 +21,7 @@ class Line (
 
     fun getLength(): Double = getLength(point1, point2)
 
-    private fun getLength(point1: Point, point2: Point): Double {
+    private fun getLength(pointI1: Point, point2: Point): Double {
         return hypot(abs(point1.x - point2.x), abs(point1.y - point2.y))
     }
 

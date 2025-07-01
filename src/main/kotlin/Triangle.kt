@@ -10,7 +10,7 @@ class Triangle(
     }
 
     fun getPoints(): List<Point> {
-        return listOf(point1, point2, point3)
+        return listOf(point1.clone(), point2.clone(), point3.clone())
     }
 
     fun getArea() = getArea(point1, point2, point3)
@@ -19,7 +19,7 @@ class Triangle(
         return .5 * abs(point1.x * (point2.y - point3.y) + point2.x * (point3.y - point1.y) + point3.x * (point1.y - point2.y))
     }
 
-    fun validatePoints(point1: Point, point2: Point, point3: Point) {
+    private fun validatePoints(point1: Point, point2: Point, point3: Point) {
         if (getArea(point1, point2, point3) == 0.0) {
             throw IllegalArgumentException("area must be greater than zero")
         }

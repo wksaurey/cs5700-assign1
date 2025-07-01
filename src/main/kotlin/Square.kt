@@ -13,7 +13,7 @@ open class Square(
 
     fun move(dx: Double, dy: Double) = centerPoint.move(dx, dy)
 
-    open fun validateValue(length: Double): Double {
+    protected open fun validateValue(length: Double): Double {
         if (length <= 0.0) {
             throw IllegalArgumentException("length must be greater than zero")
         }

@@ -6,6 +6,7 @@ class Circle(
     radius: Double
 ): Square(point, radius*2) {
     var radius: Double = validateValue(radius)
+        private set
 
     override fun getArea() = PI*radius.pow(2)
 }

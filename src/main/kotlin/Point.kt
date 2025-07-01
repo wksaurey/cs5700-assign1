@@ -17,7 +17,7 @@ class Point(
         y += validateValue(dy)
     }
 
-    fun validateValue(value: Double): Double {
+    private fun validateValue(value: Double): Double {
         if (value.isNaN() || value.isInfinite()) {
             throw IllegalArgumentException()
         }
