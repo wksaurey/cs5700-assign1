@@ -1,12 +1,23 @@
 import kotlin.math.PI
 import kotlin.math.pow
 
-class Circle(
-    point: Point,
+open class Circle(
+    private val centerPoint: Point,
     radius: Double
-): Square(point, radius*2) {
+) {
     var radius: Double = validateValue(radius)
         private set
 
-    override fun getArea() = PI*radius.pow(2)
+    fun getCenterPoint() = centerPoint.clone()
+
+    open fun getArea() = PI*radius.pow(2)
+
+    fun move(dx: Double, dy: Double) = centerPoint.move(dx, dy)
+
+    protected open fun validateValue(radius: Double): Double {
+        if (radius <= 0.0) {
+            throw IllegalArgumentException("radius must be greater than zero")
+        }
+        return radius
+    }
 }
