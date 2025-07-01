@@ -13,8 +13,9 @@ class SquareTest{
     fun testSquareInit() {
         for (width in widthValues){
             val square = Square(point, width)
-            assertEquals(1.0, square.centerPoint.x)
-            assertEquals(2.0, square.centerPoint.y)
+            val centerPoint = square.getCenterPoint()
+            assertEquals(1.0, centerPoint.x)
+            assertEquals(2.0, centerPoint.y)
             assertEquals(width, square.width)
         }
     }
@@ -63,7 +64,7 @@ class SquareTest{
             val xResult = result[0]
             val yResult = result[1]
 
-            val actualPoint = square.centerPoint
+            val actualPoint = square.getCenterPoint()
 
             assertEquals(xResult, actualPoint.x)
             assertEquals(yResult, actualPoint.y)

@@ -12,8 +12,9 @@ class RectangleTest{
         for (width in lengthValues){
             for (height in lengthValues){
                 val rectangle = Rectangle(point, width, height)
-                assertEquals(1.0, rectangle.centerPoint.x)
-                assertEquals(2.0, rectangle.centerPoint.y)
+                val centerPoint = rectangle.getCenterPoint()
+                assertEquals(1.0, centerPoint.x)
+                assertEquals(2.0, centerPoint.y)
                 assertEquals(width, rectangle.width)
                 assertEquals(height, rectangle.height)
             }
@@ -33,7 +34,7 @@ class RectangleTest{
             listOf<Double>(1.0, 1.0),
             listOf<Double>(3.0, 5.0),
             listOf<Double>(.9, .4),
-            listOf<Double>(.65, 4),
+            listOf<Double>(.65, 4.0),
         )
         val expectedAreas = listOf<Double>(
             1.0,
@@ -46,7 +47,7 @@ class RectangleTest{
             val width = lengths[0]
             val height = lengths[1]
             val rectangle = Rectangle(point, width, height)
-            assertEquals(expectedArea, rectangle.getArea())
+            assertEquals(expectedArea, rectangle.getArea(), .001)
         }
     }
 }
