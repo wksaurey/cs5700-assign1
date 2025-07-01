@@ -1,8 +1,8 @@
 open class Rectangle(
-    point: Point,
+    centerPoint: Point,
     width: Double,
     height: Double
-): Square(point, width) {
+): Square(centerPoint, width) {
     var height: Double = validateValue(height)
         private set
 
