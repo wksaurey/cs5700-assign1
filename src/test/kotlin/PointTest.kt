@@ -40,14 +40,18 @@ class PointTest{
     @Test
     fun testPointMove() {
         val moves = listOf(
+            listOf<Double>(0.0, 0.0),
             listOf<Double>(1.0, 2.0),
             listOf<Double>(-2.0, -4.0),
-            listOf<Double>(-1.5, .4)
+            listOf<Double>(-1.5, .4),
+            listOf<Double>(1.25, -0.01)
         )
         val results = listOf(
+            listOf<Double>(1.0, 0.5),
             listOf<Double>(2.0, 2.5),
             listOf<Double>(-1.0, -3.5),
-            listOf<Double>(-.5, .9)
+            listOf<Double>(-.5, .9),
+            listOf<Double>(2.25, 0.49)
         )
 
         for ((move, result) in moves.zip(results)) {
